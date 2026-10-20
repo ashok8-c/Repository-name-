@@ -37,7 +37,13 @@ const activityColors = [
 const chartBars = [30, 46, 36, 62, 44, 76, 55, 90, 67, 80, 57, 96];
 
 export default function StudyTracker() {
-  const project = portfolio.projects[1];
+  const project = portfolio.projects.find(
+  (item) => item.name === "Study Tracker"
+);
+
+if (!project) {
+  return null;
+}
 
   // HYDRATION NOTE: this value is only used inside `transition` props, which
   // never appear in the server HTML. Do NOT use it in `initial`, `style`,
