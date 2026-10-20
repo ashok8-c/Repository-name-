@@ -130,10 +130,12 @@ export default function Hero() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section
-      id="top"
-      className="relative isolate mx-auto flex min-h-[calc(100svh-68px)] max-w-7xl items-center overflow-hidden px-4 py-12 sm:px-6 sm:py-16 md:px-8 md:py-24 lg:px-10"
-    >
+    
+<section
+  id="top"
+  className="relative isolate mx-auto flex min-h-0 max-w-7xl items-start overflow-hidden px-4 py-12 sm:px-6 sm:py-16 md:px-8 md:py-20 lg:min-h-[calc(100svh-68px)] lg:items-center lg:px-10 lg:py-24"
+>
+
       {/* Hero-only atmospheric lighting */}
       <div
         aria-hidden="true"
