@@ -32,29 +32,31 @@ const path = points
 
 export default function LightCurve() {
   return (
-    <div className="overflow-hidden rounded-xl border border-white/10 bg-[#0d1118] p-4 md:p-6">
-      <div className="mb-5 flex flex-wrap items-start justify-between gap-4">
-        <div>
-          <p className="font-mono text-xs uppercase tracking-[0.15em] text-[#65e6ee]">
+    <div className="w-full min-w-0 max-w-full overflow-hidden rounded-xl border border-white/10 bg-[#0d1118] p-3 sm:p-4 md:p-6">
+      <div className="mb-5 flex min-w-0 flex-wrap items-start justify-between gap-3 sm:gap-4">
+        <div className="min-w-0">
+          <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#65e6ee] sm:text-xs sm:tracking-[0.15em]">
             Signal analysis
           </p>
 
-          <h4 className="mt-2 text-lg font-semibold text-[#f2f4f8]">
+          <h4 className="mt-2 break-words text-base font-semibold text-[#f2f4f8] sm:text-lg">
             Stellar brightness
           </h4>
         </div>
 
-        <span className="rounded-md border border-[#65e6ee]/20 px-2.5 py-1.5 font-mono text-[10px] text-[#aab4c4]">
+        <span className="max-w-full rounded-md border border-[#65e6ee]/20 px-2 py-1.5 font-mono text-[9px] text-[#aab4c4] sm:px-2.5 sm:text-[10px]">
           TRANSIT SIGNATURE
         </span>
       </div>
 
-      <div className="overflow-x-auto">
+      {/* Responsive chart: never force a wider-than-screen minimum */}
+      <div className="w-full min-w-0 max-w-full overflow-hidden">
         <svg
           viewBox="0 0 600 150"
+          preserveAspectRatio="xMidYMid meet"
           role="img"
           aria-label="Illustrative stellar light curve showing a temporary dip in brightness that resembles a planetary transit"
-          className="h-auto min-w-[420px] w-full"
+          className="block h-auto w-full max-w-full"
         >
           {[30, 60, 90, 120].map((y) => (
             <line
@@ -132,11 +134,12 @@ export default function LightCurve() {
         </svg>
       </div>
 
-      <div className="mt-4 flex flex-wrap justify-between gap-2 text-xs text-[#7f8999]">
-        <span>Time →</span>
-        <span>Illustrative data · not an observed measurement</span>
+      <div className="mt-4 flex min-w-0 flex-wrap items-start justify-between gap-2 text-xs text-[#7f8999]">
+        <span className="shrink-0">Time →</span>
+        <span className="min-w-0 break-words sm:text-right">
+          Illustrative data · not an observed measurement
+        </span>
       </div>
     </div>
   );
 }
-
